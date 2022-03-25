@@ -1,7 +1,7 @@
 import Artist from '../models/artist.js';
 import Release from '../models/release.js';
 
-const getAllArtists = async (res, res, next) => {
+const getAllArtists = async (req, res, next) => {
   try {
     const artists = await Artist.find();
     return res.status(200).json(artists);

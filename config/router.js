@@ -35,7 +35,7 @@ router
 
 router
   .route('/artists/:id/releases')
-  .get(artistController.getAllReleasesForArtists);
+  .get(artistController.getAllReleasesForArtist);
 
 router.route('/register').post(userController.registerUser);
 
