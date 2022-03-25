@@ -1,0 +1,25 @@
+{
+  "name": "project-3-music-rating-app",
+  "version": "1.0.0",
+  "description": "backend api for music rating app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node db/seed.js",
+    "start:api": "npx nodemon server.js"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-mongo-sanitize": "^2.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.6",
+    "mongoose-beautiful-unique-validation": "^7.1.1",
+    "mongoose-hidden": "^1.9.1",
+    "mongoose-unique-validator": "^3.0.0"
+  }
+}
