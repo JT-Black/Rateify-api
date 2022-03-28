@@ -24,7 +24,7 @@ router
   .post(secureRoute, reviewController.createReview);
 
 router
-  .route('/releases/:id/review/:reviewId')
+  .route('/releases/:id/reviews/:reviewId')
   .delete(secureRoute, reviewController.deleteReview)
   .put(secureRoute, reviewController.updateReview);
 

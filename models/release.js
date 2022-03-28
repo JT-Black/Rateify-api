@@ -12,10 +12,10 @@ const reviewSchema = new mongoose.Schema(
 const releaseSchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
-    artwork: { type: String, required: true },
+    artwork: { type: String },
     genres: { type: Array },
     releaseYear: { type: Number },
-    url: { type: String, required: true },
+    url: { type: String },
     artist: { type: mongoose.Schema.ObjectId, ref: 'Artist', required: true },
     likes: { type: mongoose.Schema.ObjectId, ref: 'User' },
     reviews: [reviewSchema]

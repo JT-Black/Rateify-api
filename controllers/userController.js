@@ -5,7 +5,7 @@ import { secret } from '../config/environment.js';
 
 async function registerUser(req, res, next) {
   try {
-    if (req.body.password !== req.body.passwordConfirmation) {
+    if (req.body.password !== req.body.confirmation) {
       return res.status(422).json({ message: 'Passwords do not match' });
     }
 
@@ -36,7 +36,7 @@ async function loginUser(req, res, next) {
     const token = jwt.sign(
       { userId: user._id, isAdmin: user.isAdmin }, // payload on our token
       secret, // the secret that only the developer knows
-      { expiresIn: '6h' } // token expires in 6 hours
+      { expiresIn: '240h' } // token expires in 240 hours
     );
 
     return res.status(202).send({ token, message: 'Login successful!' });

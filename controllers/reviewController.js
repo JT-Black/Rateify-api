@@ -14,7 +14,7 @@ const createReview = async (req, res, next) => {
       createdBy: req.currentUser._id
     };
 
-    release.review.push(newReview);
+    release.reviews.push(newReview);
     const savedRelease = await release.save();
 
     return res.status(201).json(savedRelease);
@@ -33,7 +33,7 @@ const deleteReview = async (req, res, next) => {
       return res.status(404).send({ message: 'Release not found' });
     }
 
-    const review = release.review.id(reviewId);
+    const review = release.reviews.id(reviewId);
 
     if (!review) {
       return res.status(404).send({ message: 'Review not found' });
