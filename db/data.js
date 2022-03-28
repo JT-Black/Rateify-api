@@ -1,6 +1,6 @@
 import Artist from '../models/artist.js';
 
-function createArtist(name, img, bio) {
+function createArtist(name, bio, img) {
   return {
     name: name,
     bio: bio,
