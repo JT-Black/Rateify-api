@@ -34,11 +34,24 @@ router
   .get(artistController.getAllArtists);
 
 router
+  .route('/artists/:id')
+  .delete(secureRoute, artistController.deleteArtist)
+  .put(secureRoute, artistController.updateArtist)
+  .get(artistController.getArtistById);
+
+router
   .route('/artists/:id/releases')
   .get(artistController.getAllReleasesForArtist);
 
 router.route('/register').post(userController.registerUser);
 
 router.route('/login').post(userController.loginUser);
+
+router.route('/admin').get(secureRoute, userController.getAllUsers);
+
+router
+  .route('/admin/:id')
+  .delete(secureRoute, userController.deleteUser)
+  .put(secureRoute, userController.updateUser);
 
 export default router;

@@ -47,6 +47,12 @@ async function seed() {
     releasesData[i].artist = artistId;
   }
   const releases = await Release.create(releasesData);
+
+  for (let i = 0; i < releasesData.length; i++) {
+    const releaseId = releases[i]._id;
+    const artistId = artists[i]._id;
+    await Artist.findByIdAndUpdate(artistId, { releases: [releaseId] });
+  }
   //console.log('RELEASES: ', releases);
   console.log(`Seeded ${releases.length} Releases 🎸🎵🤘🎼🎵.`);
 

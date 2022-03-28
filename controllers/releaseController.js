@@ -3,7 +3,7 @@ import Artist from '../models/artist.js';
 
 const getAllReleases = async (req, res, next) => {
   try {
-    const releases = await Release.find();
+    const releases = await Release.find().populate('artist');
     return res.status(200).json(releases);
   } catch (err) {
     next(err);
@@ -12,7 +12,7 @@ const getAllReleases = async (req, res, next) => {
 
 const getReleaseById = async (req, res, next) => {
   try {
-    const release = await Release.findById(req.params.id);
+    const release = await Release.findById(req.params.id).populate('artist');
     return !release ? res.status(404) : res.status(200).json(release);
   } catch (err) {
     next(err);
@@ -23,7 +23,7 @@ const createRelease = async (req, res, next) => {
   try {
     const newRelease = await Release.create(req.body);
     await Artist.updateMany(
-      { _id: newRelease.artists },
+      { _id: newRelease.artist },
       { $push: { releases: newRelease._id } }
     );
     return res.status(201).json(newRelease);
@@ -53,8 +53,8 @@ const deleteRelease = async (req, res, next) => {
   try {
     const release = await Release.deleteOne({ _id: req.params.id });
     await Artist.updateMany(
-      { _id: newRelease.artists },
-      { $pull: { releases: newRelease._id } }
+      { _id: release.artists },
+      { $pull: { releases: release._id } }
     );
     return res.status(204).send('Release successfully deleted');
   } catch (err) {

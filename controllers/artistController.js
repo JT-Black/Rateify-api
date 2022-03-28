@@ -3,7 +3,7 @@ import Release from '../models/release.js';
 
 const getAllArtists = async (req, res, next) => {
   try {
-    const artists = await Artist.find();
+    const artists = await Artist.find().populate('releases');
     return res.status(200).json(artists);
   } catch (err) {
     next(err);
@@ -12,7 +12,7 @@ const getAllArtists = async (req, res, next) => {
 
 const getArtistById = async (req, res, next) => {
   try {
-    const artist = await Artist.findById(req.params.id);
+    const artist = await Artist.findById(req.params.id).populate('releases');
     return !artist ? res.status(404) : res.status(200).json(artist);
   } catch (err) {
     next(err);
@@ -52,7 +52,7 @@ const getAllReleasesForArtist = async (req, res, next) => {
   try {
     const artist = await Artist.findById(req.params.id).populate('releases');
     return res.status(200).json(artist.releases);
-  } catch (error) {
+  } catch (err) {
     next(err);
   }
 };

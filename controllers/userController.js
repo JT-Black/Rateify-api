@@ -45,7 +45,47 @@ async function loginUser(req, res, next) {
   }
 }
 
+//! Remove this route on deployment
+const getAllUsers = async (req, res, next) => {
+  try {
+    const users = await User.find();
+    return res.status(200).json(users);
+  } catch (err) {
+    next(err);
+  }
+};
+
+const updateUser = async (req, res, next) => {
+  try {
+    if (req.currentUser.isAdmin) {
+      const user = await User.findById(req.params.id);
+      user.set(req.body);
+      const savedUser = await user.save();
+      return res.status(200).json(savedUser);
+    }
+    return res.status(401).send({
+      message: 'Unauthorized: you must be an admin to edit a user'
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
+const deleteUser = async (req, res, next) => {
+  try {
+    if (req.currentUser.isAdmin) {
+      const user = await User.deleteOne({ _id: req.params.id });
+    }
+    return res.status(204).send('User successfully deleted');
+  } catch (err) {
+    next(err);
+  }
+};
+
 export default {
   registerUser,
-  loginUser
+  loginUser,
+  updateUser,
+  deleteUser,
+  getAllUsers
 };

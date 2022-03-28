@@ -62,7 +62,7 @@ const updateReview = async (req, res, next) => {
       return res.status(404).send({ message: 'Release not found' });
     }
 
-    const review = release.review.id(reviewId);
+    const review = release.reviews.id(reviewId);
 
     if (!review) {
       return res.status(404).send({ message: 'Review not found' });
