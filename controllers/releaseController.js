@@ -53,7 +53,7 @@ const deleteRelease = async (req, res, next) => {
   try {
     const release = await Release.deleteOne({ _id: req.params.id });
     await Artist.updateMany(
-      { _id: release.artists },
+      { _id: release.artist },
       { $pull: { releases: release._id } }
     );
     return res.status(204).send('Release successfully deleted');
