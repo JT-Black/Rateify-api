@@ -23,4 +23,15 @@ const releaseSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+releaseSchema.virtual('averageRating').get(function () {
+  if (!this.reviews.length) return '0';
+  const sumOfRatings = this.reviews.reduce((acc, review) => {
+    if (!review.rating) return acc;
+    return acc + review.rating;
+  }, 0);
+  return (sumOfRatings / this.reviews.length).toFixed(1);
+});
+
+releaseSchema.set('toJSON', { virtuals: true });
+
 export default mongoose.model('Release', releaseSchema);
