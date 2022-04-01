@@ -7,11 +7,13 @@ function createArtist(name, bio, img) {
     img: img
   };
 }
-function createRelease(title, url, artwork) {
+function createRelease(title, url, artwork, releaseYear, genre) {
   return {
     title: title,
     url: url,
     artwork: artwork,
+    releaseYear: releaseYear,
+    genres: [genre],
     artist: ''
   };
 }
@@ -221,202 +223,282 @@ const releases = [
   createRelease(
     'Blackbird',
     'https://open.spotify.com/album/0Fk4lWAADmFMmuW6jp6xyE?si=zfvgE6wQRxOec_U35cM-nQ',
-    'https://i.scdn.co/image/ab67616d00001e02d73fa7125044e0d80f12960d'
+    'https://i.scdn.co/image/ab67616d00001e02d73fa7125044e0d80f12960d',
+    '2007',
+    'Hard Rock'
   ),
   createRelease(
     'Master of Reality',
     'https://open.spotify.com/album/3kBG6q0aXKxzn01wKTwZr5?si=I6pecDT6S6e8GvGq8XginA',
-    'https://i.scdn.co/image/ab67616d00001e02b7ec2b4b9c76b3b737990a42'
+    'https://i.scdn.co/image/ab67616d00001e02b7ec2b4b9c76b3b737990a42',
+    '1971',
+    'Metal'
   ),
   createRelease(
     'Lemonade',
     'https://open.spotify.com/album/7dK54iZuOxXFarGhXwEXfF?si=fam6ZYMkSPqMnf4Iejll3Q',
-    'https://i.scdn.co/image/ab67616d00001e0289992f4d7d4ab94937bf9e23'
+    'https://i.scdn.co/image/ab67616d00001e0289992f4d7d4ab94937bf9e23',
+    '2016',
+    'R&B'
   ),
   createRelease(
     'Sempiternal',
     'https://open.spotify.com/album/6IYPmM3xsOPL2XPSvf1ZAz?si=y1XNUq1vRXidJcGyO7HmJQ',
-    'https://i.scdn.co/image/ab67616d00001e0260cf7c8dd93815ccd6cb4830'
+    'https://i.scdn.co/image/ab67616d00001e0260cf7c8dd93815ccd6cb4830',
+    '2013',
+    'Rock'
   ),
   createRelease(
     "A Grand Don't Come For Free",
     'https://open.spotify.com/album/365ETCJBUmEWroc4UGBS1u?si=WpAghAu6To-NYN3CoPTKaQ',
-    'https://i.scdn.co/image/ab67616d00001e024bf409ede02e2a4069fd02a8'
+    'https://i.scdn.co/image/ab67616d00001e024bf409ede02e2a4069fd02a8',
+    '2004',
+    'Hip Hop'
   ),
   createRelease(
     'Fades Away (feat. MishCatt) (Tribute Concert Version)',
     'https://open.spotify.com/album/3gtlfmfpJjdhUdpfeqj8KO?si=pccwgAfjQ86cGweiBZji_w',
-    'https://i.scdn.co/image/ab67616d00001e025ff8ae1ce5d5614785965f7b'
+    'https://i.scdn.co/image/ab67616d00001e025ff8ae1ce5d5614785965f7b',
+    '2019',
+    'Electronic'
   ),
   createRelease(
     'Welcome Home',
     'https://open.spotify.com/track/42GP0xKtkolBnmqQRvSllO?si=4eef94916506440c',
-    'https://i.scdn.co/image/ab67616d00001e02a9250e237a834437fa7d8739'
+    'https://i.scdn.co/image/ab67616d00001e02a9250e237a834437fa7d8739',
+    '2005',
+    'Progressive'
   ),
   createRelease(
     'Through The Fire & The Flames',
     'https://open.spotify.com/track/2eB7JqIY4hTTSz31h6bjwR?si=6b9f6dfa2c134e2a',
-    'https://i.scdn.co/image/ab67616d00001e02aba1be9e11135df25f6f1e49'
+    'https://i.scdn.co/image/ab67616d00001e02aba1be9e11135df25f6f1e49',
+    '2006',
+    'Metal'
   ),
   createRelease(
     "(I Don't Want to Go to) Chelsea",
     'https://open.spotify.com/track/7uYyLVNjKY49L8o3AouXZd?si=c45de7119da9400a',
-    'https://i.scdn.co/image/ab67616d00001e02c39aa62b10cea6cd2c2c1ed8'
+    'https://i.scdn.co/image/ab67616d00001e02c39aa62b10cea6cd2c2c1ed8',
+    '1978',
+    'Rock'
   ),
   createRelease(
     'Scorpion',
     'https://open.spotify.com/album/1ATL5GLyefJaxhQzSPVrLX?si=G7nJfIyqQumefFlDrF29yA',
-    'https://i.scdn.co/image/ab67616d00001e02f907de96b9a4fbc04accc0d5'
+    'https://i.scdn.co/image/ab67616d00001e02f907de96b9a4fbc04accc0d5',
+    '2018',
+    'Pop'
   ),
   createRelease(
     'Encore',
     'https://open.spotify.com/album/7tsXPtLqhab1zWeubbf6JH?si=Zxr-cH_OTiOFReijGauU0Q',
-    'https://i.scdn.co/image/ab67616d00001e02dfd0ebe9b4b99f621f376453'
+    'https://i.scdn.co/image/ab67616d00001e02dfd0ebe9b4b99f621f376453',
+    '2004',
+    'Rap'
   ),
   createRelease(
     'Gorrilaz',
     'https://open.spotify.com/album/4tUxQkrduOE8sfgwJ5BI2F?si=dPrtU6pWTICjRJ7oyZCxCA',
-    'https://i.scdn.co/image/ab67616d00001e02f6c46838e4425ea96e2562fe'
+    'https://i.scdn.co/image/ab67616d00001e02f6c46838e4425ea96e2562fe',
+    '2001',
+    'Pop'
   ),
   createRelease(
     'The Real Thing',
     'https://open.spotify.com/album/6LEP3L94jnkqjOxYJWPRP0?si=FhcwfyfqRtGKAiha_KpGyg',
-    'https://i.scdn.co/image/ab67616d00001e02e081ef6de656ee714788ea0d'
+    'https://i.scdn.co/image/ab67616d00001e02e081ef6de656ee714788ea0d',
+    '1989',
+    'Metal'
   ),
   createRelease(
     'Square Hammer',
     'https://open.spotify.com/track/5TNhjanmvwvmjCz2WYwSAv?si=63d181f8b3c34836',
-    'https://i.scdn.co/image/ab67616d00001e025b752bd7476346431a8d1e79'
+    'https://i.scdn.co/image/ab67616d00001e025b752bd7476346431a8d1e79',
+    '2016',
+    'Metal'
   ),
   createRelease(
     'No More Idols',
     'https://open.spotify.com/album/6NcFWs4RTh6ICkhSh3gSaO?si=Ek9gCEUeQ-u7Bzim-Obwpg',
-    'https://i.scdn.co/image/ab67616d00001e02c706d69471bfdbb585355915'
+    'https://i.scdn.co/image/ab67616d00001e02c706d69471bfdbb585355915',
+    '2011',
+    'Electronic'
   ),
   createRelease(
     'Underneath',
     'https://open.spotify.com/album/70kThssMOMBi4GyBPCk0Gu?si=TwOQ5yQYTeWHxKgi4wSY7g',
-    'https://i.scdn.co/image/ab67616d00001e026309a1f13c14df29de8177a5'
+    'https://i.scdn.co/image/ab67616d00001e026309a1f13c14df29de8177a5',
+    '2020',
+    'Metal'
   ),
   createRelease(
     'The Mountain',
     'https://open.spotify.com/album/3RBULTZJ97bvVzZLpxcB0j?si=su386C01TluniYpW0R9mag',
-    'https://i.scdn.co/image/ab67616d00001e02817a9af094d11b2b6936f0ba'
+    'https://i.scdn.co/image/ab67616d00001e02817a9af094d11b2b6936f0ba',
+    '2013',
+    'Progressive'
   ),
   createRelease(
     '2 Minutes to Midnight',
     'https://open.spotify.com/track/2SrVGpjv0mqCR6j9EZPSm2?si=4cd4a2c9758a48ea',
-    'https://i.scdn.co/image/ab67616d00001e020335e5389b34f6acfb73a82d'
+    'https://i.scdn.co/image/ab67616d00001e020335e5389b34f6acfb73a82d',
+    '1984',
+    'Metal'
   ),
   createRelease(
     'ABC',
     'https://open.spotify.com/track/6D8kc7RO0rqBLSo2YPflJ5?si=9de9063bae8f4bc8',
-    'https://i.scdn.co/image/ab67616d00001e029df68560791d0b3dab491867'
+    'https://i.scdn.co/image/ab67616d00001e029df68560791d0b3dab491867',
+    '1970',
+    'Pop'
   ),
   createRelease(
     'As Daylight Dies',
     'https://open.spotify.com/album/42EsiMKN2jXw0RafNy2yYn?si=jvW15iBwSoOnza27FdMrXw',
-    'https://i.scdn.co/image/ab67616d00001e0204672df7a2e206de29f01166'
+    'https://i.scdn.co/image/ab67616d00001e0204672df7a2e206de29f01166',
+    '2006',
+    'Metal'
   ),
   createRelease(
     'Old Town Road',
     'https://open.spotify.com/track/2YpeDb67231RjR0MgVLzsG?si=b047bd0542fa4f2c',
-    'https://i.scdn.co/image/ab67616d00001e02c0e7bf5cdd630f314f20586a'
+    'https://i.scdn.co/image/ab67616d00001e02c0e7bf5cdd630f314f20586a',
+    '2018',
+    'Hip Hop'
   ),
   createRelease(
     'Crack The Skye',
     'https://open.spotify.com/album/2W2nqEKXWBorbq5yvm3jZg?si=852kuaBtSqeNe22GXqd0pw',
-    'https://i.scdn.co/image/ab67616d00001e02ac79283ccb6d08af31fd33d8'
+    'https://i.scdn.co/image/ab67616d00001e02ac79283ccb6d08af31fd33d8',
+    '2009',
+    'Metal'
   ),
   createRelease(
     'Enter Sandman',
     'https://open.spotify.com/track/5sICkBXVmaCQk5aISGR3x1?si=a5e294876e7e4156',
-    'https://i.scdn.co/image/ab67616d00001e02cf84c5b276431b473e924802'
+    'https://i.scdn.co/image/ab67616d00001e02cf84c5b276431b473e924802',
+    '1991',
+    'Metal'
   ),
   createRelease(
     'Iowa',
     'https://open.spotify.com/album/5Zs0mNCTs73CqPKbZPWFX9?si=eR6QSBz0Rkid8HfKO-SzKw',
-    'https://i.scdn.co/image/ab67616d00001e02a62eefef8ee83d5e09aa8331'
+    'https://i.scdn.co/image/ab67616d00001e02a62eefef8ee83d5e09aa8331',
+    '2001',
+    'Metal'
   ),
   createRelease(
     'R&G (Rythm & Gangsta): The Masterpiece',
     'https://open.spotify.com/album/797fkvAtk0iZvP1HHPCWbp?si=GNWVPoz7TciekHh7kRtWbw',
-    'https://i.scdn.co/image/ab67616d00001e02e803716268c173c3f9a0c057'
+    'https://i.scdn.co/image/ab67616d00001e02e803716268c173c3f9a0c057',
+    '2004',
+    'Rap'
   ),
   createRelease(
     'Royal Blood',
     'https://open.spotify.com/album/0BFzNaeaNv4mahOzwZFGHK?si=81xYpoQrRg2mjl5JEAhF4A',
-    'https://i.scdn.co/image/ab67616d00001e0269471a9c0a6073a9beb81410'
+    'https://i.scdn.co/image/ab67616d00001e0269471a9c0a6073a9beb81410',
+    '2014',
+    'Rock'
   ),
   createRelease(
     'Watch The Throne (Deluxe)',
     'https://open.spotify.com/album/2P2Xwvh2xWXIZ1OWY9S9o5?si=7itSRVfEQMq-nBfe7tomcg',
-    'https://i.scdn.co/image/ab67616d00001e024a767758e8ebe2443591c9fd'
+    'https://i.scdn.co/image/ab67616d00001e024a767758e8ebe2443591c9fd',
+    '2011',
+    'Rap'
   ),
   createRelease(
     'Graduation',
     'https://open.spotify.com/album/4SZko61aMnmgvNhfhgTuD3?si=CA7BkX2xQFOx2a10yaNs9w',
-    'https://i.scdn.co/image/ab67616d00001e0226f7f19c7f0381e56156c94a'
+    'https://i.scdn.co/image/ab67616d00001e0226f7f19c7f0381e56156c94a',
+    '2007',
+    'Rap'
   ),
   createRelease(
     'Pink Friday',
     'https://open.spotify.com/album/3LJhoYn4nnHmvPRO3ppbsl?si=ubWKGOQTSzi2JmRon2ksOA',
-    'https://i.scdn.co/image/ab67616d00001e02aa7d2641af0fa4c1f76fafbf'
+    'https://i.scdn.co/image/ab67616d00001e02aa7d2641af0fa4c1f76fafbf',
+    '2010',
+    'Pop'
   ),
   createRelease(
     'Future Nostalgia',
     'https://open.spotify.com/album/5lKlFlReHOLShQKyRv6AL9?si=Q3Ft-zNFSoa6IvB8lGskpA',
-    'https://i.scdn.co/image/ab67616d00001e02d4daf28d55fe4197ede848be'
+    'https://i.scdn.co/image/ab67616d00001e02d4daf28d55fe4197ede848be',
+    '2020',
+    'Pop'
   ),
   createRelease(
     '21',
     'https://open.spotify.com/album/5duyQokC4FMcWPYTV9Gpf9?si=f-LJfnINQIyMsElkz2_rtA',
-    'https://i.scdn.co/image/ab67616d00001e02fb7eedd9877b0c60597ef3e5'
+    'https://i.scdn.co/image/ab67616d00001e02fb7eedd9877b0c60597ef3e5',
+    '2011',
+    'Pop'
   ),
   createRelease(
     'The Colour And The Shape',
     'https://open.spotify.com/album/30ly6F6Xl0TKmyBCU50Khv?si=Xhj8R4fHSeGltD4k_aN5VA',
-    'https://i.scdn.co/image/ab67616d00001e020389027010b78a5e7dce426b'
+    'https://i.scdn.co/image/ab67616d00001e020389027010b78a5e7dce426b',
+    '1997',
+    'Rock'
   ),
   createRelease(
     'Ashes of the Wake',
     'https://open.spotify.com/album/3ffdUrEvCQJX6mn2ZTq93m?si=Z0vDNhhZRr6t7iRAJhSvlw',
-    'https://i.scdn.co/image/ab67616d00001e02b12877d8bdfaa0f19b4624fa'
+    'https://i.scdn.co/image/ab67616d00001e02b12877d8bdfaa0f19b4624fa',
+    '2004',
+    'Metal'
   ),
   createRelease(
     'Immersion',
     'https://open.spotify.com/album/3XtEGVx9uh7J46nBzEc1VS?si=d2yeRVX7SvyeaNCmnN9MeQ',
-    'https://i.scdn.co/image/ab67616d0000b27330f8e0f777376780c4077507'
+    'https://i.scdn.co/image/ab67616d0000b27330f8e0f777376780c4077507',
+    '2010',
+    'Drum and bass'
   ),
   createRelease(
     'Meteora',
     'https://open.spotify.com/album/0f7R0jf0pcTb6K6IVVPcMD?si=4YMkp2ExT7ab1jGasA2r9w',
-    'https://i.scdn.co/image/ab67616d00001e0289a8fab8bf8cd2b77da1fd17'
+    'https://i.scdn.co/image/ab67616d00001e0289a8fab8bf8cd2b77da1fd17',
+    '2003',
+    'Rock'
   ),
   createRelease(
     'The Downward Spiral',
     'https://open.spotify.com/album/5I7lLu8xXJfGRdFUqHaLQU?si=JlYgAjC2TIiw6IPTw7S--w',
-    'https://i.scdn.co/image/ab67616d0000b2734078c255069c0e7a2553fa4a'
+    'https://i.scdn.co/image/ab67616d0000b2734078c255069c0e7a2553fa4a',
+    '1994',
+    'Rock'
   ),
   createRelease(
     'Absolution',
     'https://open.spotify.com/album/0HcHPBu9aaF1MxOiZmUQTl?si=bQ8AP7yaQ_ukTzeyqwO-8A',
-    'https://i.scdn.co/image/ab67616d00001e028cb690f962092fd44bbe2bf4'
+    'https://i.scdn.co/image/ab67616d00001e028cb690f962092fd44bbe2bf4',
+    '2004',
+    'Rock'
   ),
   createRelease(
     'Songs For The Deaf',
     'https://open.spotify.com/album/4w3NeXtywU398NYW4903rY?si=tG3Cdl7RSla0MvoOKlzYRg',
-    'https://i.scdn.co/image/ab67616d00001e029eec33b045d88f87b9b06e67'
+    'https://i.scdn.co/image/ab67616d00001e029eec33b045d88f87b9b06e67',
+    '2002',
+    'Rock'
   ),
   createRelease(
     'Mothership (Remastered)',
     'https://open.spotify.com/album/4wExFfncaUIqSgoxnqa3Eh?si=xbxHaQH2QfyAMsnNWNyYig',
-    'https://i.scdn.co/image/ab67616d00001e0222f1b6c28ce5735646b2e569'
+    'https://i.scdn.co/image/ab67616d00001e0222f1b6c28ce5735646b2e569',
+    '2007',
+    'Rock'
   ),
   createRelease(
     "Get Rich Or Die Tryin'",
     'https://open.spotify.com/album/5G5rgQHzdQnw32SI0WjIo5?si=41qfBTl3RFiJ-w8m2fE-sw',
-    'https://i.scdn.co/image/ab67616d00001e02d843fabb75fef14010e30cae'
+    'https://i.scdn.co/image/ab67616d00001e02d843fabb75fef14010e30cae',
+    '2003',
+    'Rap'
   )
 ];
 

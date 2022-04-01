@@ -3,7 +3,7 @@ import Artist from '../models/artist.js';
 
 const getAllReleases = async (req, res, next) => {
   try {
-    const releases = await Release.find().populate('artist');
+    const releases = await Release.find().sort({ title: 1 }).populate('artist');
     return res.status(200).json(releases);
   } catch (err) {
     next(err);
